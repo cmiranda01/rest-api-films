@@ -18,6 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+// creamos la ruta que irá al controlador filmscontroller donde obtenemos las peliculas paginadas
 Route::get('/films', [\App\Http\Controllers\FilmsController::class, 'index']);
+// obtenemos el detalle completo de la pelicula con todas las imagenes en esta ruta
 Route::get('/{id}', [\App\Http\Controllers\FilmsController::class, 'show']);

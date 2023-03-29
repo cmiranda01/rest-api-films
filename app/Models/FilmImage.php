@@ -9,7 +9,7 @@ class FilmImage extends Model
 {
     use HasFactory;
     protected $table = 'f_image';
-
+// aqui marcamos su relacion con film
     public function film()
     {
         return $this->belongsTo(Film::class);

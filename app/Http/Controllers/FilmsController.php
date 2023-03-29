@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class FilmsController extends Controller
 {
+    // este es el index, la funcion que se encarga de paginar las peliculas y devolverlas 
     public function index(Request $request)
     {
         $perPage = $request->input('perPage', 1);; // número de elementos por página
@@ -16,8 +17,8 @@ class FilmsController extends Controller
         
         return response()->json($films, 200);
     }
-    
 
+    // esta funcion devuelve la pelicula mas su imagen
     public function show($id)
     {
         $film = Film::with('FilmImage')->find($id);
